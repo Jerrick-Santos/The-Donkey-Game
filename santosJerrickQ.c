@@ -95,6 +95,19 @@ int main()
         
         //MAIN GAME LOGIC!----------------------------------------------------------------------------------------------------------------
 
+        //POSSIBLE ERROR MESSAGES
+
+        if (nDonkey1 == 0 && nDonkey2 == 0)
+        {
+            printf("\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t______________________________________________________________\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t|                                                             |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t|               CAUTION! - No Donkeys are selected            |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t|_____________________________________________________________|\n");
+            printf("\n");
+        }
+        
+
         //SPEEDUPS 
         if (nDonkey1 == nDonkey2)
         {
