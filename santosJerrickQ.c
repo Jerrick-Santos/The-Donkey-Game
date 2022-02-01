@@ -44,12 +44,7 @@ int main()
 
             if (checkOwnerMovement(nDonkey1, nD1M, nD2M, nD3M, nD4M, nOWM) == 0 || checkOwnerMovement(nDonkey2, nD1M, nD2M, nD3M, nD4M, nOWM) == 0)
             {
-                printf("\n");
-                printf("\t\t\t\t\t\t\t ____________________\n");
-                printf("\t\t\t\t\t\t\t|                    |\n");
-                printf("\t\t\t\t\t\t\t| INVALID SELECTION! |\n");
-                printf("\t\t\t\t\t\t\t|____________________|\n");
-                printf("\n");
+                displayInvalidSelection();
             }
             
 
@@ -99,14 +94,8 @@ int main()
 
         if (nDonkey1 == 0 && nDonkey2 == 0)
         {
-            printf("\n");
-            printf("\t\t\t\t\t\t\t\t\t\t\t______________________________________________________________\n");
-            printf("\t\t\t\t\t\t\t\t\t\t\t|                                                             |\n");
-            printf("\t\t\t\t\t\t\t\t\t\t\t|               CAUTION! - No Donkeys are selected            |\n");
-            printf("\t\t\t\t\t\t\t\t\t\t\t|_____________________________________________________________|\n");
-            printf("\n");
+            displayNoDonkeySelected();
         }
-        
 
         //SPEEDUPS 
         if (nDonkey1 == nDonkey2)
@@ -133,12 +122,7 @@ int main()
         }
         else if (nSpeedups_count == 1 && (nDonkey1_speedCheck != 0 || nDonkey2_speedCheck != 0))
         {
-            printf("\n");
-            printf("\t\t\t\t\t\t\t\t\t\t\t______________________________________________________________\n");
-            printf("\t\t\t\t\t\t\t\t\t\t\t|                                                             |\n");
-            printf("\t\t\t\t\t\t\t\t\t\t\t| SPEEDUP NOT APPLIED! - Any Donkey CANNOT be less than 1     |\n");
-            printf("\t\t\t\t\t\t\t\t\t\t\t|_____________________________________________________________|\n");
-            printf("\n");
+            speedUpNotApplied();
         }
 
         //REVERT speed checks to 0 after checking
@@ -168,16 +152,7 @@ int main()
     }
 
     //SHOW FINAL GAME STATS
-    printf("\n");
-    printf("\t\t\t\t\t\t\t _____________________________________________________________________________________________________________________________\n");
-    printf("\t\t\t\t\t\t\t|                                                                                                                             |\n");
-    printf("\t\t\t\t\t\t\t|----------------------------------------------------/ GAME OVER! /-----------------------------------------------------------|\n");
-    printf("\t\t\t\t\t\t\t|_____________________________________________________________________________________________________________________________|\n");
-    printf("\n");
-    printf("\t\t\t\t\t\t\tDONKEY SPEED: \n");
-    printf("\t\t\t\t\t\t\t| D1 = %d | D2 = %d | D3 = %d | D4 = %d |\n", nD1, nD2, nD3, nD4);
-    printf("\t\t\t\t\t\t\tSPEEDUPS: %d\n", nSpeedups);
-    printf("\t\t\t\t\t\t\tELAPSED: %d\n", nTime_count);
+    displayFinalGameStats(nD1, nD2, nD3, nD4, nSpeedups, nTime_count);
 
     // Time (FAST OR SLOW)
     if (nTime_count > 13)

@@ -164,3 +164,47 @@ void displayWelcomePrompt()
     printf("\t\t\t\t\t\t\t\t\t\t\t\t| |_//| \\_/|| \\_/|| |_/|  | |_/\\| \\_/||  \\_ |   \\ \\_/\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\\____\\\\____/\\____/\\____/  \\____/\\____/\\____/\\_|\\_\\(_)\n");
 }
+
+void displayInvalidSelection()
+{
+    printf("\n");
+    printf("\t\t\t\t\t\t\t ____________________\n");
+    printf("\t\t\t\t\t\t\t|                    |\n");
+    printf("\t\t\t\t\t\t\t| INVALID SELECTION! |\n");
+    printf("\t\t\t\t\t\t\t|____________________|\n");
+    printf("\n");
+}
+
+void displayNoDonkeySelected()
+{
+    printf("\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t______________________________________________________________\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t|                                                             |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t|               CAUTION! - No Donkeys are selected            |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t|_____________________________________________________________|\n");
+    printf("\n");
+}
+
+void speedUpNotApplied()
+{
+    printf("\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t______________________________________________________________\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t|                                                             |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t| SPEEDUP NOT APPLIED! - Any Donkey CANNOT be less than 1     |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t|_____________________________________________________________|\n");
+    printf("\n");
+}
+
+void displayFinalGameStats(int nD1, int nD2, int nD3, int nD4, int nSpeedups, int nTime_count)
+{
+    printf("\n");
+    printf("\t\t\t\t\t\t\t _____________________________________________________________________________________________________________________________\n");
+    printf("\t\t\t\t\t\t\t|                                                                                                                             |\n");
+    printf("\t\t\t\t\t\t\t|----------------------------------------------------/ GAME OVER! /-----------------------------------------------------------|\n");
+    printf("\t\t\t\t\t\t\t|_____________________________________________________________________________________________________________________________|\n");
+    printf("\n");
+    printf("\t\t\t\t\t\t\tDONKEY SPEED: \n");
+    printf("\t\t\t\t\t\t\t| D1 = %d | D2 = %d | D3 = %d | D4 = %d |\n", nD1, nD2, nD3, nD4);
+    printf("\t\t\t\t\t\t\tSPEEDUPS: %d\n", nSpeedups);
+    printf("\t\t\t\t\t\t\tELAPSED: %d\n", nTime_count);
+}
