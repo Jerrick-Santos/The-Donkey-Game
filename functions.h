@@ -140,6 +140,32 @@ void donkeyMover(int nDonkey, int *nD1M, int *nD2M, int *nD3M, int *nD4M)
             
     }
 }
+
+int getDonkeyEquivalentSpeed(int nDonkey, int nD1, int nD2, int nD3, int nD4)
+{
+    int nDonkeyEquival = 0;
+
+    if (nDonkey == 1)
+    {
+        return nDonkeyEquival += nD1;
+    }
+    else if (nDonkey == 2)
+    {
+        return nDonkeyEquival += nD2;
+    }
+    else if (nDonkey == 3)
+    {
+        return nDonkeyEquival += nD3;
+    }
+    else if (nDonkey == 4)
+    {
+        return nDonkeyEquival += nD4;
+    }
+    else
+    {
+        return nDonkeyEquival;
+    }
+}
 /**
  * @brief Records the Elapsed time of the 2 Donkeys which will depende which Donkey has a higher value
  * 
@@ -152,49 +178,19 @@ void donkeyMover(int nDonkey, int *nD1M, int *nD2M, int *nD3M, int *nD4M)
  * @param nTime_count - time counter/time elapsed counter of the game
  * @return int - will return an INT value to the nTime_count variable on the main function
  */
-int getTimeElapsed(int nDonkey1, int nDonkey2, int nD1, int nD2, int nD3, int nD4, int nTime_count)
+int getTimeElapsed(int nDonkeyEquival1, int nDonkeyEquival2, int nD1, int nD2, int nD3, int nD4, int nTime_count)
 {
-        if (nDonkey1 > nDonkey2)
+        if (nDonkeyEquival1 > nDonkeyEquival2)
         {
-            if (nDonkey1 == 1)
-            {
-                return nTime_count += nD1;
-            }
-            else if (nDonkey1 == 2)
-            {
-                return nTime_count += nD2;
-            }
-            else if (nDonkey1 == 3)
-            {
-                return nTime_count += nD3;
-            }
-            else if (nDonkey1 == 4)
-            {
-                return nTime_count += nD4;
-            }
+            return nTime_count += nDonkeyEquival1;
         }
-        else if (nDonkey1 == 0 && nDonkey2 == 0)
+        else if (nDonkeyEquival1 == 0 && nDonkeyEquival2 == 0)
         {
             return nTime_count;
         }
         else
         {
-            if (nDonkey2 == 1)
-            {
-                return nTime_count += nD1;
-            }
-            else if (nDonkey2 == 2)
-            {
-                return nTime_count += nD2;
-            }
-            else if (nDonkey2 == 3)
-            {
-                return nTime_count += nD3;
-            }
-            else if (nDonkey2 == 4)
-            {
-                return nTime_count += nD4;
-            }
+            return nTime_count += nDonkeyEquival2;
         }
 }
 
