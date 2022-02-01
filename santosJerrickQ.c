@@ -8,6 +8,7 @@ int main()
     int nD1 = 1, nD2 = 2, nD3 = 4, nD4 = 6, nOW; //Values of Donkeys 
     int nD1M = 0, nD2M = 0, nD3M = 0, nD4M = 0, nOWM = 0; //Donkey Movements
     int nTime_count = 0, nSpeedups = 2, nSpeedups_count = 0; //Game Mechs 
+    int nDonkeyEquival1, nDonkeyEquival2; //Variables to check which donkey has the slowest speed 
     int nCount = 0; //Counter for how many are in STABLE 2 (including the OWNER)
     int nDonkey1_speedCheck = 0, nDonkey2_speedCheck = 0; //check if there is change when speedup is chosen
     int nWelcome, nEnd; //Game initializations
@@ -130,7 +131,9 @@ int main()
         nDonkey2_speedCheck = 0;
 
         //TIME ELAPSED (WITHOUT DEDUCTION)
-        nTime_count = getTimeElapsed(nDonkey1, nDonkey2, nD1, nD2, nD3, nD4, nTime_count);
+        nDonkeyEquival1 = getDonkeyEquivalentSpeed(nDonkey1, nD1, nD2, nD3, nD4);
+        nDonkeyEquival2 = getDonkeyEquivalentSpeed(nDonkey2, nD1, nD2, nD3, nD4);
+        nTime_count = getTimeElapsed(nDonkeyEquival1, nDonkeyEquival2, nD1, nD2, nD3, nD4, nTime_count);
 
         //SLOWDOWN OF EACH DONKEY------------------------------------------------ 
         if (nDonkey1 == nDonkey2)
