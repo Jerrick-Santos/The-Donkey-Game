@@ -160,11 +160,11 @@ int main()
     // Time (FAST OR SLOW)
     if (nTime_count > 13)
     {
-        printf("\t\t\t\t\t\t\tTOO SLOW :^( Try again next time, Partner!");
+        displaySlow();
     }
     else
     {
-        printf("\t\t\t\t\t\t\tQUITE FAST :^D Keep up the good work, Partner!\n");
+        displayFast();
     }
 
     printf("\n");
