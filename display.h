@@ -1,3 +1,7 @@
+/**
+ * @brief This is where all the display functions are placed that are called in main
+ * 
+ */
 void displayStableHeader()
 {
     printf("\t\t\t\t\t\t\t\t\t\t\t _________________  - - - - - - - - - - - -  _________________\n");
@@ -34,7 +38,9 @@ void displayOwner1()
     printf("\t\t\t\t\t\t\t\t\t\t\t|     '.-  .'     | - - - - - - - - - - - - |                 |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t|       '-'       | - - - - - - - - - - - - |                 |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t|_________________| - - - - - - - - - - - - |_________________|\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t|                 | - - - - - - - - - - - - |                 |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t|    MANG JUAN    | - - - - - - - - - - - - |                 |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t|_________________| - - - - - - - - - - - - |_________________|\n");
     printf("\n");
 }
 
@@ -50,7 +56,9 @@ void displayOwner2()
     printf("\t\t\t\t\t\t\t\t\t\t\t|                 | - - - - - - - - - - - - |     '.-  .'     |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t|                 | - - - - - - - - - - - - |       '-'       |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t|_________________| - - - - - - - - - - - - |_________________|\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t|                 | - - - - - - - - - - - - |                 |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t|                 | - - - - - - - - - - - - |    MANG JUAN    |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t|_________________| - - - - - - - - - - - - |_________________|\n");
     printf("\n");
 }
 
