@@ -30,7 +30,7 @@ int main()
 
     while (nCount != 5)
     {
-        //USER INPUTS! ----------------------------------------------------------------------------------------------------------------
+        //USER INPUTS!----------------------------------------------------------------------------------------------------------------
         printf("\n");
         printf("\t\t\t\t\t\t\tDONKEY SPEED: \n");
         printf("\t\t\t\t\t\t\t| D1 = %d | D2 = %d | D3 = %d | D4 = %d |\n", nD1, nD2, nD3, nD4);
@@ -43,6 +43,11 @@ int main()
             printf("\t\t\t\t\t\t\tSELECT SECOND DONKEY: ");
             scanf("%d", &nDonkey2);
 
+            /**
+             * @brief CHECKS if the input to nDonkey1 and nDonkey2 are valid
+             * This Loop will keep occuring until nDonkey1 and nDonkey2 becomes valid 
+             * IF either nDonkey1 and nDonkey2 has an invalid input the checkOwnerMovement will return 0 (meaninf INVALID)
+             */
             if (checkOwnerMovement(nDonkey1, nD1M, nD2M, nD3M, nD4M, nOWM) == 0 || checkOwnerMovement(nDonkey2, nD1M, nD2M, nD3M, nD4M, nOWM) == 0)
             {
                 displayInvalidSelection();
@@ -91,14 +96,14 @@ int main()
         
         //MAIN GAME LOGIC!----------------------------------------------------------------------------------------------------------------
 
-        //POSSIBLE ERROR MESSAGES
+        //POSSIBLE ERROR MESSAGE - if no Donkeys are selected
 
         if (nDonkey1 == 0 && nDonkey2 == 0)
         {
             displayNoDonkeySelected();
         }
 
-        //SPEEDUPS 
+        //SPEEDUPS (The speedup application depends on certain conditions of the donkey inputs)
         if (nDonkey1 == nDonkey2)
         {
             getSpeedups(nDonkey1, &nSpeedups, &nSpeedups_count, &nD1, &nD2, &nD3, &nD4, &nDonkey1_speedCheck);
@@ -111,12 +116,14 @@ int main()
 
             if (nDonkey1_speedCheck == 0 && nDonkey2_speedCheck == 0)
             {
+                //Applies the speedup powerup if nDonkey1_speedCheck and nDonkey2_speedCheck are 0
                 getSpeedups(nDonkey1, &nSpeedups, &nSpeedups_count, &nD1, &nD2, &nD3, &nD4, &nDonkey1_speedCheck);
                 getSpeedups(nDonkey2, &nSpeedups, &nSpeedups_count, &nD1, &nD2, &nD3, &nD4, &nDonkey2_speedCheck);
             }
             
         }
 
+        //once the speedup is deducted or not, then it will check the following conditions 
         if (nSpeedups_count == 1 && nDonkey1_speedCheck == 0 && nDonkey2_speedCheck == 0 && nSpeedups > 0 && (nDonkey1 != 0 || nDonkey2 != 0))
         {
             nSpeedups--;
@@ -130,9 +137,13 @@ int main()
         nDonkey1_speedCheck = 0;
         nDonkey2_speedCheck = 0;
 
-        //TIME ELAPSED (WITHOUT DEDUCTION)
+        //TIME ELAPSED------------------------------------------------ 
+
+        //GETS the equivalent speed value of the selected Donkey
         nDonkeyEquival1 = getDonkeyEquivalentSpeed(nDonkey1, nD1, nD2, nD3, nD4);
         nDonkeyEquival2 = getDonkeyEquivalentSpeed(nDonkey2, nD1, nD2, nD3, nD4);
+
+        //COMPARES nDonkeyEquival1 and nDonkeyEquival2 and adds it to the nTimeElapsed variable
         nTime_count = getTimeElapsed(nDonkeyEquival1, nDonkeyEquival2, nD1, nD2, nD3, nD4, nTime_count);
 
         //SLOWDOWN OF EACH DONKEY------------------------------------------------ 
@@ -157,7 +168,7 @@ int main()
     //SHOW FINAL GAME STATS
     displayFinalGameStats(nD1, nD2, nD3, nD4, nSpeedups, nTime_count);
 
-    // Time (FAST OR SLOW)
+    // DISPLAY FINAL ELAPSED TIME
     if (nTime_count > 13)
     {
         displaySlow();
@@ -183,8 +194,8 @@ int main()
     do
     {
         printf("\t\t\t\t\t\t\t[Type 0] to EXIT GAME: ");
-        scanf("%d", nEnd);
-    } while (nEnd == 0);
+        scanf("%d", &nEnd);
+    } while (nEnd != 0);
     
  
     return 0;
