@@ -1,7 +1,12 @@
-/**
- * @brief This is where all the display functions are placed that are called in main
- * 
- */
+/******************************************
+File Name: display.h
+
+Author: Jerrick Ezekiel Q. Santos 
+Last Update: Feruary 6, 2022
+
+This file contains all the display functions are placed that are called in main 
+******************************************/
+
 void displayStableHeader()
 {
     printf("\t\t\t\t\t\t\t\t\t\t\t _________________  - - - - - - - - - - - -  _________________\n");
@@ -161,6 +166,7 @@ void displayWelcomePrompt()
     printf("\t\t\t\t\t\t\tBut if the total ELAPSED TIME IS LESS THAN 13, then Mang Juan is FAST!\n");
     printf("\t\t\t\t\t\t\t------------------------------------------------------------------------------------------------------------------------------\n");
     printf("\t\t\t\t\t\t\t\n");
+    printf("\t\t\t\t\t\t\tTIP: Maximize this window to enhance gaming experience :^3\n");
     printf("\t\t\t\t\t\t\tNOTE: Mang Juan can only choose a maximum of 2 DONKEYS and a minimum of 1 DONKEY for each trip.\n");
     printf("\t\t\t\t\t\t\tNOTE: A selection is INVALID if Mang Juan is not on the same stable as the selected donkey.\n");
     printf("\t\t\t\t\t\t\tNOTE: The SPEEDUP power up cannot take effect if the donkey's speed is less than or equal to 2.\n");
