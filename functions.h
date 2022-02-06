@@ -1,3 +1,12 @@
+/******************************************
+File Name: functions.h
+
+Author: Jerrick Ezekiel Q. Santos 
+Last Update: Feruary 6, 2022
+
+This file contains all the game mechanic functions that are called in main
+******************************************/
+
 /**
  * @brief - checks if the owner's position is the same as the selected donkey 
  * IF the position of the owner is NOT the same as the selected donkey THEN return (0 or FALSE)
@@ -206,7 +215,7 @@ int getDonkeyEquivalentSpeed(int nDonkey, int nD1, int nD2, int nD3, int nD4)
  * @param nTime_count - time counter/time elapsed counter of the game
  * @return int - will return an INT value to the nTime_count variable on the main function
  */
-int getTimeElapsed(int nDonkeyEquival1, int nDonkeyEquival2, int nD1, int nD2, int nD3, int nD4, int nTime_count)
+int getTimeElapsed(int nDonkeyEquival1, int nDonkeyEquival2, int nTime_count)
 {
         if (nDonkeyEquival1 > nDonkeyEquival2)
         {
